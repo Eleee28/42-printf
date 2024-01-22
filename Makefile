@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: elena <elena@student.42.fr>                +#+  +:+       +#+         #
+#    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:35:42 by elena             #+#    #+#              #
-#    Updated: 2023/11/14 14:24:28 by elena            ###   ########.fr        #
+#    Updated: 2024/01/22 11:58:25 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,13 @@ MY_OBJECTS = $(MY_SOURCES:.c=.o)
 			printf_bonus/ft_putargs_bonus2.c  	printf_bonus/ft_flags.c			\
 			printf_bonus/ft_puthex_nbr_bonus.c
 
-# BONUS_OBJ = $(BONUS_SRC:.c=.o)
+BONUS_SRC = printf_bonus/ft_flags.c			printf_bonus/ft_printf.c \
+			printf_bonus/ft_putargs.c		printf_bonus/ft_putchar.c \
+			printf_bonus/ft_puthex.c 		printf_bonus/ft_putnbr.c \
+			printf_bonus/ft_putptr.c 		printf_bonus/ft_putstr.c \
+			printf_bonus/ft_putunsig.c 		printf_bonus/utils.c
+
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 REMOVE = rm -f
 
@@ -43,18 +49,18 @@ all: $(NAME)
 $(NAME): $(MY_OBJECTS)
 	$(LIB) $(NAME) $(MY_OBJECTS)
 
-# bonus: $(BONUS_NAME)
+bonus: $(BONUS_NAME)
 
-# $(BONUS_NAME): $(MY_OBJECTS) $(BONUS_OBJ)
-#	$(LIB) $(NAME) $(MY_OBJECTS) $(BONUS_OBJ)
-#	$(LIB) $(BONUS_NAME) $(MY_OBJECTS) $(BONUS_OBJ)
+$(BONUS_NAME): $(MY_OBJECTS) $(BONUS_OBJ)
+	$(LIB) $(NAME) $(MY_OBJECTS) $(BONUS_OBJ)
+	$(LIB) $(BONUS_NAME) $(MY_OBJECTS) $(BONUS_OBJ)
 
 clean:
-	$(REMOVE) $(MY_OBJECTS) 
+	$(REMOVE) $(MY_OBJECTS) $(BONUS_OBJ)
 
 
 fclean: clean
-	$(REMOVE) $(NAME)
+	$(REMOVE) $(NAME) $(BONUS_NAME)
 
 re: fclean all
 

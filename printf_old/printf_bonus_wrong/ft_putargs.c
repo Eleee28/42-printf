@@ -6,11 +6,12 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 09:59:29 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/22 11:51:44 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/23 09:32:39 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 /** @brief Print string
  * 
  *  @details If flag '-' is not present print as many ' ' as the width 

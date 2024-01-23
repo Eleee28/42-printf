@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsig.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 11:20:34 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/22 11:29:07 by ejuarros         ###   ########.fr       */
+/*   Created: 2024/01/23 08:48:33 by ejuarros          #+#    #+#             */
+/*   Updated: 2024/01/23 09:53:18 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/** @brief Convert an unsigned number to string
+/** @brief Convert a number to string
  * 
- *  @details Add zeroes at the beggining 
+ *  @details Consider if the number is negative. Add zeroes at the beggining 
  *  to match the length.
  * 
  *  @param n number to convert
  *  @param len length of the string
+ *  @param sign sign flag
  *  @param str string where the converted number is stored
  * 
  *  @return void
- * 
 */
-static void	ft_unsig_to_str(unsigned int n, int len, char *str)
+static void	ft_num_to_str(int n, int len, char sign, char *str)
 {
 	int	i;
 
@@ -32,7 +32,10 @@ static void	ft_unsig_to_str(unsigned int n, int len, char *str)
 	i = 1;
 	while (n != 0)
 	{
-		str[len - i] = "0123456789"[n % 10];
+		if (n < 0)
+			str[len - i] = "0123456789"[-(n % 10)];
+		else
+			str[len - i] = "0123456789"[n % 10];
 		n /= 10;
 		i++;
 	}
@@ -41,11 +44,13 @@ static void	ft_unsig_to_str(unsigned int n, int len, char *str)
 		str[len - i] = '0';
 		i++;
 	}
+	if (sign)
+		str[0] = sign;
 }
 
-/** @brief Print unsigned number
+/** @brief Print a number
  * 
- *  @details
+ *  @details 
  * 
  *  @param flags structure that stores flags information
  *  @param n number to print
@@ -53,19 +58,28 @@ static void	ft_unsig_to_str(unsigned int n, int len, char *str)
  *  @return string to print taking into account the flags
  * 
 */
-char	*ft_putunsig(t_flags *flags, unsigned int n)
+char	*ft_putnbr(t_flags *flags, int n)
 {
 	int		len;
 	char	*str;
 
-	len = ft_numlen(n, 10);
+	if (n < 0)
+		flags->sign = '-';
+	len = ft_numlen(n);
 	if (!flags->precision && !n)
 		len = 0;
 	else if (flags->precision >= len)
 		len = flags->precision;
-	if (flags->precision < 0 && flags->justified == '0' && flags->width >= len)
-		len = flags->width;
+	else if (flags->precision < 0 && flags->justified == '0')
+	{
+		if (flags->sign && flags->width - 1 >= len)
+			len = flags->width - 1;
+		if (!flags->sign && flags->width >= len)
+			len = flags->width;
+	}
+	if (flags->sign)
+		len += 1;
 	str = (char *)malloc((len + 1) * sizeof(char));
-	ft_unsig_to_str(n, len, str);
+	ft_num_to_str(n, len, flags->sign, str);
 	return (str);
 }

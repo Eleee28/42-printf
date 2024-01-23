@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 05:55:49 by elena             #+#    #+#             */
-/*   Updated: 2024/01/22 11:42:31 by ejuarros         ###   ########.fr       */
+/*   Created: 2024/01/23 08:47:09 by ejuarros          #+#    #+#             */
+/*   Updated: 2024/01/23 10:16:31 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-/**
+/** 
  *  @struct s_flags
  * 
  * 	@brief Structure to hold formatting flags
@@ -62,37 +62,23 @@ typedef struct s_flags
 	char	hex;
 	int		width;
 	int		precision;
-	char	args;
+	char	arg;
 }			t_flags;
 
 int		ft_printf(char const *str, ...);
-
 int		ft_flags(t_flags *flags, char const *str);
-
 void	ft_printchar(int *len, char c);
-
 void	ft_putargs(int *len, t_flags *flags, va_list args);
-
 void	ft_putchar(t_flags *flags, int *len, char c);
-
 char	*ft_putnbr(t_flags *flags, int n);
-
-/*char	*ft_puthex_mayus(t_flags *flags, unsigned int n);
-
-char	*ft_puthex_minus(t_flags *flags, unsigned int n);*/
-
-char	*ft_puthex_low(t_flags *flags, unsigned int n);
-
 char	*ft_puthex_up(t_flags *flags, unsigned int n);
-
+char	*ft_puthex_low(t_flags *flags, unsigned int n);
 char	*ft_putptr(t_flags *flags, unsigned long int n);
-
 char	*ft_putstr(int precision, char *s);
-
 char	*ft_putunsig(t_flags *flags, unsigned int n);
-
 int		ft_strlen(char *str);
-
-int		ft_numlen(long int num, int base);
+int		ft_numlen(long int n);
+int		ft_unsiglen(unsigned long int n, int base);
+int		ft_toupper(int c);
 
 #endif

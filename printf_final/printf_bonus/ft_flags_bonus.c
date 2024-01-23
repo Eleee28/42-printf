@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:45:41 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/23 10:55:01 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:45:08 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ static int	ft_wid_pre(t_flags *flags, char const *str)
  * 
  * @details Set default values (i = 1 to skip '%').
  * If a flag is encountered treat it and store it considering the priority.
+ * 
  *  @param flags structure that stores flags information
  * 	@param str string to extract information from
  * 

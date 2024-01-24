@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putargs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elena <elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:23:14 by elena             #+#    #+#             */
-/*   Updated: 2023/11/13 21:56:40 by elena            ###   ########.fr       */
+/*   Updated: 2024/01/24 08:29:57 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/** @brief Print the arguments
+ * 
+ *  @details Call the corresponding function depending on the argument type.
+ *  
+ *  @param args argements of the ft_printf call
+ *  @param i index of the string 
+ *  @param str string with argument types
+ * 
+ *  @return number of characters printed
+*/
 int	ft_putargs(va_list args, int i, const char *str)
 {
 	int	num_chars;

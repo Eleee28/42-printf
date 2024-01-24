@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:49:29 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/23 10:55:38 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/24 08:42:10 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ static void	ft_hex_to_str(unsigned int n, int len, char sign, char *str)
 
 /** @brief Print hexadecimal number in lower case
  * 
- *  @details
- * 
  *  @param flags structure that stores flags information
  *  @param n number to print
  * 
@@ -84,8 +82,6 @@ char	*ft_puthex_low(t_flags *flags, unsigned int n)
 }
 
 /** @brief Print hexadecimal number in upper case
- * 
- *  @details
  * 
  *  @param flags structure that stores flags information
  *  @param n number to print

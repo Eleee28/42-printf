@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:46:49 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/23 10:55:17 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/24 08:25:19 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 /** @brief Printf function from stdio.h
 *
-*  @details
+*  @details After a '%' we read flags and argument types, else we print.
+*  va_list is used to accept a variable number of arguments
+*  va_start is used for "starting the list" (initiates the list to point 
+*  	to the first variable argument)
+*  va_arg is used to get the next argument from the list
+*  va_end is used for "ending the list", it cleans things up
 *
 *  @param str string with text, flags and type identifiers
 *  @param ... unkown number of parameters to print

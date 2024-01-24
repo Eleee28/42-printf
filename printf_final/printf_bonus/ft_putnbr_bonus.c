@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:48:33 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/23 10:55:40 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/24 08:42:23 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ static void	ft_num_to_str(int n, int len, char sign, char *str)
 }
 
 /** @brief Print a number
- * 
- *  @details 
  * 
  *  @param flags structure that stores flags information
  *  @param n number to print

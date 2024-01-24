@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:50:53 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/23 10:55:55 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/24 08:42:39 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ static void	ft_unsig_to_str(unsigned int n, int len, char *str)
 }
 
 /** @brief Print unsigned number
- * 
- *  @details
  * 
  *  @param flags structure that stores flags information
  *  @param n number to print

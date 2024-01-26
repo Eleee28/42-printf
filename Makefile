@@ -6,13 +6,15 @@
 #    By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 08:36:43 by ejuarros          #+#    #+#              #
-#    Updated: 2024/01/23 10:52:55 by ejuarros         ###   ########.fr        #
+#    Updated: 2024/01/26 22:23:34 by ejuarros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 BONUS_NAME = $(NAME)
+
+CFLAGS = -Wall -Werror -Wextra
 
 MY_SOURCES = printf/ft_printf.c		printf/ft_putchar.c		printf/ft_puthex.c \
 			 printf/ft_putnbr.c 	printf/ft_putptr.c 		printf/ft_putstr.c  \

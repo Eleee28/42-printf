@@ -27,15 +27,17 @@ The function has to handle the following flags.
 
 For the bonus part we have to manage the combination of several flags:
 
-- '-' -
-- '0' -
-- '.' -
-- '#' - 
-- ' ' -
-- '+' -
+- '-' : right-padding with spaces
+- '0' : left-padding with zeroes
+- '.' : to indicate the precision
+- '#' : adds "0x" to an hexadecimal number
+- ' ' : adds one space
+- '+' : adds the sign (-/+)
 
 The flags work as follows:
 
 ~~~~
 %[flags][width][.precision]type
+
+	flags = {-0# +}
 ~~~~

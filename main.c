@@ -6,11 +6,11 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:46:16 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/24 08:50:54 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/26 21:32:39 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_final/printf_bonus/ft_printf_bonus.h"
+#include "printf_bonus/ft_printf_bonus.h"
 #include <stdio.h>
 
 int	main(void)

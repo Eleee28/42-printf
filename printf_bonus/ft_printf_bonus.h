@@ -6,7 +6,7 @@
 /*   By: ejuarros <ejuarros@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 08:47:09 by ejuarros          #+#    #+#             */
-/*   Updated: 2024/01/23 10:55:29 by ejuarros         ###   ########.fr       */
+/*   Updated: 2024/01/26 22:36:32 by ejuarros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@
  *  - p: pointer
  *  - d, i: decimal number
  *  - u: unsigned number
- *  - h, H: hexadecimal character (lower/upper case)
+ *  - x, X: hexadecimal character (lower/upper case)
  *  - %: '%'
  * 
 */

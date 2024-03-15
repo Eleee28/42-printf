@@ -1,5 +1,7 @@
 # 42_printf
 
+Statement of the project (in [Spanish](es.subject.pdf) / [English](en.subject.pdf)
+
 ## About the project
 
 The goal of the project is to recode printf() from <stdio.h> (libc). To do this we will use variadic functions.

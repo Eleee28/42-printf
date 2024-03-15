@@ -1,6 +1,6 @@
 # 42_printf
 
-Statement of the project (in [Spanish](es.subject.pdf) / [English](en.subject.pdf)
+Statement of the project (in [Spanish](es.subject.pdf) / [English](en.subject.pdf))
 
 ## About the project
 

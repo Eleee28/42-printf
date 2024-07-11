@@ -2,44 +2,90 @@
 
 Statement of the project (in [Spanish](es.subject.pdf) / [English](en.subject.pdf))
 
-## About the project
+## Introduction
 
-The goal of the project is to recode printf() from <stdio.h> (libc). To do this we will use variadic functions.
+This project aims to recreate the functionality of the `printf` function from the C standard library (`<stdio.h>`). The goal is to implement this function using variadic arguments, providing support for various format specifiers and handling different types of data.
 
-### Mandatory part
+## Project Objectives
+
+- Understand and implement variadic functions in C.
+
+- Handle different format specifiers to print various data types.
+
+- Manage multiple flags and their combinations for formatting output.
+
+## Variadic Functions and Arguments
+
+Variadic functions are functions that accept a variable number of arguments. In C, this is achieved using the `stdarg.h` library, which provides macros to handle the arguments.
+
+### Key Macros
+
+- `va_list` : A type to hold the information needed to retrieve the additional arguments.
+
+- `va_start` : Initializes a `va_list` variable to retrieve the additional arguments.
+
+- `va_arg` : Retrieves the next argument in the list.
+
+- `va_end` : Cleans up the `va_list` variable.
+
+## Mandatory part
+
+### Function Prototype
 
 The prototype of the function is the following:
 
-~~~~
+```c
 int	ft_printf(const char *str, ...);
-~~~~
+```
 
-The function has to handle the following flags.
-- %c - prints a single character
-- %s - prints a string
-- %p - prints a pointer in hexadecimal format
-- %d - prints a decimal (base 10) nummber
-- %i - prints an integer in base 10
-- %u - prints an unsigned decimal (base 10) number
-- %x - prints a number in hexadecimal (base 16) lowercase format
-- %X - prints a number in hexadecimal (base 16) uppercase format
-- %% - prints a percent sign
+### Supported Format Specifiers
 
-### Bonus part
+The `ft_printf` function must handle the following format specifiers:
 
-For the bonus part we have to manage the combination of several flags:
+| Specifier | Description |
+| --------- | ----------- |
+| '%c'      | Prints a single character |
+| '%s'      | Prints a string |
+| '%p'      | Prints a pointer in hexadecimal format |
+| '%d'      | Prints a decimal (base 10) number |
+| '%i'      | Prints an integer in base 10 |
+| '%u'      | Prints an unsigned decimal (base 10) number |
+| '%x'      | Prints a number in hexadecimal (base 16) lowercase format |
+| '%X'      | Prints a number in hexadecimal (base 16) uppercase format |
+| '%c'      | Prints a single character |
+| '%%'      | Prints a percent sign |
 
-- '-' : right-padding with spaces
-- '0' : left-padding with zeroes
-- '.' : to indicate the precision
-- '#' : adds "0x" to an hexadecimal number
-- ' ' : adds one space
-- '+' : adds the sign (-/+)
+## Bonus part
 
-The flags work as follows:
+The bonus part extends the functionality to handle various flags for formatting:
 
-~~~~
+### Supported Flags
+
+| Flags | Description |
+| ----- | ----------- |
+| '-' | Right-padding with spaces |
+| '0' | Left-padding with zeroes |
+| '.' | Indicates precision |
+| '#' | Adds "0x" to a hexadecimal number |
+| ' ' | Adds a space before a positive number |
+| '+' | Adds a sign (+/-) before a number |
+
+### Format
+
+The general format for the `ft_printf` function with flags is:
+
+```bash
 %[flags][width][.precision]type
+```
 
-	flags = {-0# +}
-~~~~
+## Implementation Steps
+
+1. **Parsing the Format String**: Identify and extract format specifiers and flags from the input string.
+
+2. **Handling Variadic Arguments**: Use va_list to manage a variable number of arguments passed to the function.
+
+3. **Implementing Specifiers**: Write functions to handle each format specifier, converting the arguments to their respective string representations.
+
+4. **Managing Flags**: Implement the logic to handle different flags and apply them to the formatted output.
+
+5. **Combining Results**: Construct the final output string by combining the processed arguments and print it.

@@ -1,4 +1,12 @@
-# 42_printf
+<p align="center">
+  <img src="https://github.com/ayogun/42-project-badges/blob/main/badges/ft_printfm.png" alt="printf badge"/>
+</p>
+
+<h1 align="center">
+ 42 Printf
+</h1>
+
+<!-- # 42_printf -->
 
 Statement of the project (in [Spanish](es.subject.pdf) / [English](en.subject.pdf))
 
